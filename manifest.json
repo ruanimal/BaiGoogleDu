@@ -1,12 +1,16 @@
 {
+    "manifest_version": 2,
     "name": "谷歌百度一键搜索",
+    "version": "1.0.2",
     "description": "谷歌百度一键搜索， 在百度页面上搜谷歌，在谷歌的页面上搜索百度，无需切换，无需重新输入搜索词。 开发者：余璜；新浪微博：研究员Raywill",
-    "background_page": "background.html",
+    "background": {
+        "scripts": ["background.js"]
+    },
     "permissions": [
         "tabs",
         "http://www.baidu.com/*",
-	"http://www.google.com.hk/*",
-	"https://www.google.com.hk/*"
+    "http://www.google.com.hk/*",
+    "https://www.google.com.hk/*"
     ],
     "content_scripts": [
         {
@@ -14,11 +18,11 @@
                 "killer.js"
             ],
             "matches": [
-	        "http://www.baidu.com/*",
-		"http://www.google.com.hk/*",
-		"https://www.google.com.hk/*"
+            "http://www.baidu.com/*",
+        "http://www.google.com.hk/*",
+        "https://www.google.com.hk/*"
             ],
-			"run_at":"document_end"
+            "run_at":"document_end"
         }
     ],
     "browser_action": {
@@ -30,6 +34,5 @@
         "48": "logo48.png",
         "128": "logo128.png"
     },
-    "version": "1.0.2",
     "content_security_policy": "default-src 'self'"
 }
