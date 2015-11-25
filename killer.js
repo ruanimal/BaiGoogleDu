@@ -1,8 +1,10 @@
 /*
-功能：谷歌百度一键搜索
-创建：2012.06.19
-作者：研究员Raywill
-反馈：http://weibo.com/raywill2
+网址：https://github.com/ruanima/BaiGoogleDu
+功能：谷歌百度一键搜索修改版
+创建：2015.11.25
+作者：ponder.work
+反馈：190127701@qq.com
+forked from: raywill/BaiGoogleDu
 */
 
 var isOpen = true;
@@ -25,20 +27,7 @@ function insertAfter(newElement, targetElement)
             {
                 parentEl.insertBefore(newElement,targetElement.nextSibling);
             }            
-}
-
-function replaceIt(newElement , targetElement)
-{
-	var t = targetElement.parentNode;
-	if (t)
-	{
-		t.replaceChild ( newElement, targetElement);
-	}
-	else
-	{
-		alert("遇到麻烦了，请微博联系：研究员raywill");
-	}
-}
+};
 
 function googleBaiduer(){
 	//日志输出
@@ -52,12 +41,29 @@ function googleBaiduer(){
 	//var s = document.getElementsByClassName('d_sign_split');
 	var s1 =  document.getElementsByName("btnK");
 	//var s2 =  document.getElementsByName("q") ;
-	var s2 = document.getElementById("tsf");
+	var s2 = document.getElementById("sblsbb");
 	//var s2 = document.getElementById("tsf");
 	
 	var b1 =  document.getElementById("su");
 
-	if(s1 && s1.length > 0)
+	if (b1 && document.body.link )  // Search Google in Baidu
+	{
+		var BaiduBtn = document.createElement("input");
+		BaiduBtn.type = "submit";
+		BaiduBtn.value = "Google";
+		BaiduBtn.className = "s_btn btn";
+		BaiduBtn.style.marginLeft = "1px";
+		BaiduBtn.onclick = function(){
+			//alert("clicked");
+			var keyword_input = document.getElementById("kw");
+			//alert(keyword_input.value);
+			setKeywordLog(keyword_input.value, "G");
+			window.location.href="https://www.google.com.hk/search?q="+keyword_input.value;
+			return false;
+		};
+		insertAfter(BaiduBtn, b1);
+	}
+	else if(s1 || s2)
 	{
 		var BaiduBtn = document.createElement("input");
 		BaiduBtn.type = "submit";
@@ -72,25 +78,22 @@ function googleBaiduer(){
 			return false;
 		};
 		insertAfter(BaiduBtn, s1[0]);
-	}
-	else if (s2)
-	{
-		var BaiduBtn = document.createElement("input");
-		BaiduBtn.type = "submit";
-		BaiduBtn.value = " Baidu ";
-		BaiduBtn.name = "btnG";
-		BaiduBtn.style.paddingTop = "0px";
-		BaiduBtn.style.paddingLeft = "10px";
-		BaiduBtn.style.marginLeft = "10px";
-		BaiduBtn.style.width = "80px";
-		BaiduBtn.style.height = "28px";
-		BaiduBtn.style.color = "white"; // 74, 139, 245  blue
-		BaiduBtn.style.backgroundColor = "#4A8BF5"; // 74, 139, 245  blue
-		BaiduBtn.style.borderBottomWidth = "0";
-		BaiduBtn.style.borderTopWidth = "4";
-		BaiduBtn.style.borderColor = "#4A8BF5"; 
-		BaiduBtn.style.borderStyle	 = "solid";
-		BaiduBtn.onclick = function(){
+
+		var BaiduBtn2 = document.createElement("input");
+		BaiduBtn2.type = "submit";
+		BaiduBtn2.value = "du";
+		BaiduBtn2.style.position = "absolute";
+		BaiduBtn2.style.border = "none";
+		BaiduBtn2.style.fontSize = '2em';
+		BaiduBtn2.style.fontWeight = 'bold';
+		BaiduBtn2.style.color = 'white';
+		BaiduBtn2.style.margin = "0 0 0 1px";
+		BaiduBtn2.style.padding = "0";
+		BaiduBtn2.style.width = "40px";
+		BaiduBtn2.style.height = "40px";
+		BaiduBtn2.style.borderRadius = "3px"; 
+		BaiduBtn2.style.background = "#4487F7";
+		BaiduBtn2.onclick = function(){
 			//alert("clicked");
 			var keyword_input = document.getElementsByName("q");
 			//alert(keyword_input[0].value);
@@ -98,26 +101,7 @@ function googleBaiduer(){
 			window.location.href='http://www.baidu.com/s?wd=' + keyword_input[0].value;
 			return false;
 		};
-		replaceIt(BaiduBtn, document.getElementById("sfopt"));
-		//alert(s2);
-		//insertAfter(BaiduBtn, s2[0]);
-		//s2.appendChild(BaiduBtn);
-	}
-	else if (b1)  // Search Google in Baidu
-	{
-		var BaiduBtn = document.createElement("input");
-		BaiduBtn.type = "submit";
-		BaiduBtn.value = "Google";
-		BaiduBtn.className = "s_btn btn";
-		BaiduBtn.onclick = function(){
-			//alert("clicked");
-			var keyword_input = document.getElementById("kw");
-			//alert(keyword_input.value);
-			setKeywordLog(keyword_input.value, "G");
-			window.location.href="https://www.google.com.hk/search?q="+keyword_input.value;
-			return false;
-		};
-		insertAfter(BaiduBtn, b1);
+		s2.appendChild(BaiduBtn2);
 	}
 }
 

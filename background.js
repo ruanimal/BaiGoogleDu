@@ -1,8 +1,10 @@
 /*
-功能：谷歌百度一键搜索
-创建：2012.06.19
-作者：研究员Raywill
-反馈：http://weibo.com/raywill2
+网址：https://github.com/ruanima/BaiGoogleDu
+功能：谷歌百度一键搜索修改版
+创建：2015.11.25
+作者：ponder.work
+反馈：190127701@qq.com
+forked from: raywill/BaiGoogleDu
 */
 var isOpen = true ,
 	DELAY_POPICON = 2000,
