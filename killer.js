@@ -32,8 +32,8 @@ function insertAfter(newElement, targetElement)
 function googleBaiduer(){
 	//日志输出
 	//console.log('【Google Baidu搜索穿越】日志输出');
-	console.log('执行时刻：' + getTime() );
-	console.log('\n');
+	// console.log('执行时刻：' + getTime() );
+	// console.log('\n');
 
 
 
@@ -45,8 +45,9 @@ function googleBaiduer(){
 	//var s2 = document.getElementById("tsf");
 	
 	var b1 =  document.getElementById("su");
+	var result = document.getElementById('wrapper_wrapper');
 
-	if (b1 && document.body.link )  // Search Google in Baidu
+	if (b1 && result.children.length > 0 )  // Search Google in Baidu
 	{
 		var BaiduBtn = document.createElement("input");
 		BaiduBtn.type = "submit";
