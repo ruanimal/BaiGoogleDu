@@ -12,21 +12,19 @@
         "https://www.baidu.com/*",
         "http://www.google.com/*",
         "https://www.google.com/*",
-    "http://www.google.com.hk/*",
-    "https://www.google.com.hk/*"
+        "http://www.google.com.hk/*",
+        "https://www.google.com.hk/*"
     ],
     "content_scripts": [
         {
-            "js": [
-                "killer.js"
-            ],
+            "js": ["killer.js"],
             "matches": [
-            "http://www.baidu.com/*",
-            "https://www.baidu.com/*",
-            "http://www.google.com/*",
-            "https://www.google.com/*",
-        "http://www.google.com.hk/*",
-        "https://www.google.com.hk/*"
+                "http://www.baidu.com/*",
+                "https://www.baidu.com/*",
+                "http://www.google.com/*",
+                "https://www.google.com/*",
+                "http://www.google.com.hk/*",
+                "https://www.google.com.hk/*"
             ],
             "run_at":"document_end"
         }
