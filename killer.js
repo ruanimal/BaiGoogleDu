@@ -35,7 +35,7 @@ function googleBaiduer(){
     //var s = document.getElementsByClassName('d_sign_split');
     var s1 =  document.getElementsByName("btnK");
     //var s2 =  document.getElementsByName("q") ;
-    var s2 = document.getElementById("sblsbb");
+    var s2 = document.getElementById("_fZl");
     //var s2 = document.getElementById("tsf");
 
     var b1 =  document.getElementById("su");
@@ -76,17 +76,18 @@ function googleBaiduer(){
         var BaiduBtn2 = document.createElement("input");
         BaiduBtn2.type = "submit";
         BaiduBtn2.value = "du";
-        BaiduBtn2.style.position = "absolute";
+        BaiduBtn2.className = "sbico-c";
+        BaiduBtn2.style.float = 'right';
         BaiduBtn2.style.border = "none";
-        BaiduBtn2.style.fontSize = '2em';
-        BaiduBtn2.style.fontWeight = 'bold';
-        BaiduBtn2.style.color = 'white';
-        BaiduBtn2.style.margin = "0 0 0 1px";
-        BaiduBtn2.style.padding = "0";
-        BaiduBtn2.style.width = "40px";
-        BaiduBtn2.style.height = "40px";
-        BaiduBtn2.style.borderRadius = "3px";
-        BaiduBtn2.style.background = "#4487F7";
+        BaiduBtn2.style.fontSize = '1.5em';
+        BaiduBtn2.style.fontWeight = '500';
+        BaiduBtn2.style.color = "#4487F7";
+        BaiduBtn2.style.margin = "0 0 0 -14px";
+        BaiduBtn2.style.padding = "0 0 1 0";
+        BaiduBtn2.style.width = "44px";
+        BaiduBtn2.style.height = "44px";
+        BaiduBtn2.style.background = 'white';
+        BaiduBtn2.style.cursor = 'pointer';
         BaiduBtn2.onclick = function(){
             //alert("clicked");
             var keyword_input = document.getElementsByName("q");
@@ -95,7 +96,7 @@ function googleBaiduer(){
             window.location.href='http://www.baidu.com/s?wd=' + keyword_input[0].value;
             return false;
         };
-        s2.appendChild(BaiduBtn2);
+        s2.parentNode.insertBefore(BaiduBtn2, s2);
     }
 }
 
