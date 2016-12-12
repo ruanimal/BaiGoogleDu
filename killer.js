@@ -82,7 +82,7 @@ function googleBaiduer(){
         BaiduBtn2.style.fontSize = '1.5em';
         BaiduBtn2.style.fontWeight = '500';
         BaiduBtn2.style.color = "#4487F7";
-        BaiduBtn2.style.margin = "0 0 0 -14px";
+        BaiduBtn2.style.margin = "0 0 0 -8px";
         BaiduBtn2.style.padding = "0 0 1 0";
         BaiduBtn2.style.width = "44px";
         BaiduBtn2.style.height = "44px";
