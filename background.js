@@ -1,5 +1,5 @@
 /*
-网址：https://github.com/ruanima/BaiGoogleDu
+网址：https://github.com/ruanimal/BaiGoogleDu
 功能：谷歌百度一键搜索修改版
 创建：2015.11.25
 作者：ponder.work
